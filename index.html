@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kepimetheus - Because K is for Kubernetes (and taken domains)</title>
+    <title>Kepimetheus - Natural Language PromQL</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="logo.png">
 </head>
 <body class="bg-gray-900 text-white">
-    <!-- Hero Section -->
     <div class="min-h-screen flex flex-col">
         <nav class="bg-gray-800 p-4">
             <div class="container mx-auto flex justify-between items-center">
-                <div class="text-xl font-bold">
-                    <span class="text-blue-400">K</span>epimetheus
-                    <span class="text-xs text-gray-400">(The K is silent, like in Kubernetes 😉)</span>
+                <div class="flex items-center space-x-2">
+                    <img src="logo.png" alt="Kepimetheus Logo" class="h-8 w-auto">
+                    <div class="text-xl font-bold">
+                        <span class="text-blue-400">K</span>epimetheus
+                        <span class="text-xs text-gray-400">(The K is silent, like in Kubernetes 😉)</span>
+                    </div>
                 </div>
                 <div class="space-x-4">
                     <a href="#features" class="hover:text-blue-400">Features</a>
@@ -28,6 +31,9 @@
         <main class="flex-grow container mx-auto px-4 py-16">
             <!-- Hero -->
             <div class="text-center mb-16">
+                <div class="mb-8 flex justify-center">
+                    <img src="logo.png" alt="Kepimetheus Logo" class="h-32 w-auto">
+                </div>
                 <h1 class="text-5xl font-bold mb-4">
                     <span class="text-blue-400">K</span>epimetheus
                 </h1>
@@ -42,11 +48,6 @@
 <span class="text-blue-400">User:</span> Show me CPU usage for all pods in production namespace
 <span class="text-purple-400">Kepimetheus:</span> Generating PromQL...
 rate(container_cpu_usage_seconds_total{namespace="production"}[5m])</pre>
-                </div>
-                <div class="bg-gray-800 p-4 rounded-lg max-w-2xl mx-auto mb-8 text-sm text-gray-400">
-                    <i class="fas fa-lightbulb text-yellow-400 mr-2"></i>
-                    Fun fact: If Kubernetes can have a K, and kubectl can have a K,
-                    why not us? We're just keeping up with the tradition of unnecessary Ks in tech! 
                 </div>
                 <div class="space-x-4">
                     <a href="#install" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg inline-block">
@@ -92,6 +93,20 @@ rate(container_cpu_usage_seconds_total{namespace="production"}[5m])</pre>
                 </div>
             </section>
 
+            <!-- About -->
+            <section id="about" class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 text-center">About the Creator</h2>
+                <div class="bg-gray-800 p-6 rounded-lg max-w-2xl mx-auto">
+                    <p class="text-gray-300 leading-relaxed">
+                        Meet <span class="font-bold">Rodrigo Melgar</span>, an AWS DevRel who believes Kubernetes is just Tetris for containers. 
+                        When not collecting every gaming console since 1987 (yes, even the Virtual Boy), he's teaching his kids that "NES cartridge blowing" 
+                        was the original debugging technique. Turns out managing pods is a lot like being a dad - sometimes you just need to restart them 
+                        and hope for the best. Creator of Kepimetheus because speaking plain English to computers should be easier than explaining why 
+                        you need another retro console.
+                    </p>
+                </div>
+            </section>
+
             <!-- Documentation -->
             <section id="docs" class="mb-16">
                 <h2 class="text-3xl font-bold mb-8 text-center">Documentation</h2>
@@ -111,6 +126,9 @@ rate(container_cpu_usage_seconds_total{namespace="production"}[5m])</pre>
         <!-- Footer -->
         <footer class="bg-gray-800 py-8">
             <div class="container mx-auto px-4 text-center text-gray-400">
+                <div class="mb-4">
+                    <img src="logo.png" alt="Kepimetheus Logo" class="h-12 w-auto mx-auto mb-4">
+                </div>
                 <p>Kepimetheus - Made with ☕ by developers, for developers</p>
                 <p class="text-sm text-gray-500 mt-2">(The K stands for "Kubernetes developers took all the good domains")</p>
                 <p class="mt-2">
