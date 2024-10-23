@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Epimetheus - Natural Language PromQL</title>
+    <title>Kepimetheus - Because K is for Kubernetes (and taken domains)</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -12,12 +12,15 @@
     <div class="min-h-screen flex flex-col">
         <nav class="bg-gray-800 p-4">
             <div class="container mx-auto flex justify-between items-center">
-                <div class="text-xl font-bold">Epimetheus</div>
+                <div class="text-xl font-bold">
+                    <span class="text-blue-400">K</span>epimetheus
+                    <span class="text-xs text-gray-400">(The K is silent, like in Kubernetes 😉)</span>
+                </div>
                 <div class="space-x-4">
                     <a href="#features" class="hover:text-blue-400">Features</a>
                     <a href="#install" class="hover:text-blue-400">Install</a>
                     <a href="#docs" class="hover:text-blue-400">Docs</a>
-                    <a href="https://github.com/epimetheus/epimetheus" class="hover:text-blue-400">GitHub</a>
+                    <a href="https://github.com/kepimetheus/kepimetheus" class="hover:text-blue-400">GitHub</a>
                 </div>
             </div>
         </nav>
@@ -25,17 +28,31 @@
         <main class="flex-grow container mx-auto px-4 py-16">
             <!-- Hero -->
             <div class="text-center mb-16">
-                <h1 class="text-5xl font-bold mb-4">Epimetheus</h1>
-                <p class="text-2xl text-gray-400 mb-8">Because 2 AM You Shouldn't Need to Remember PromQL Syntax</p>
+                <h1 class="text-5xl font-bold mb-4">
+                    <span class="text-blue-400">K</span>epimetheus
+                </h1>
+                <p class="text-2xl text-gray-400 mb-4">Because 2 AM You Shouldn't Need to Remember PromQL Syntax</p>
+                <p class="text-md text-gray-500 mb-8 italic">
+                    "Why the K? Because like kubectl, someone took the simple name first. 
+                    But hey, at least we're consistent with the Kubernetes ecosystem! 😅"
+                </p>
                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg max-w-2xl mx-auto mb-8">
+                    <div class="text-sm text-gray-500 mb-2 text-left">// The K is silent, but our features are loud:</div>
                     <pre class="text-left text-sm text-green-400">
 <span class="text-blue-400">User:</span> Show me CPU usage for all pods in production namespace
-<span class="text-purple-400">Epimetheus:</span> Generating PromQL...
+<span class="text-purple-400">Kepimetheus:</span> Generating PromQL...
 rate(container_cpu_usage_seconds_total{namespace="production"}[5m])</pre>
                 </div>
+                <div class="bg-gray-800 p-4 rounded-lg max-w-2xl mx-auto mb-8 text-sm text-gray-400">
+                    <i class="fas fa-lightbulb text-yellow-400 mr-2"></i>
+                    Fun fact: If Kubernetes can have a K, and kubectl can have a K,
+                    why not us? We're just keeping up with the tradition of unnecessary Ks in tech! 
+                </div>
                 <div class="space-x-4">
-                    <a href="#install" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg inline-block">Get Started</a>
-                    <a href="https://github.com/epimetheus/epimetheus" class="bg-gray-700 hover:bg-gray-600 px-6 py-3 rounded-lg inline-block">
+                    <a href="#install" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg inline-block">
+                        <i class="fas fa-rocket mr-2"></i>Get Started
+                    </a>
+                    <a href="https://github.com/kepimetheus/kepimetheus" class="bg-gray-700 hover:bg-gray-600 px-6 py-3 rounded-lg inline-block">
                         <i class="fab fa-github mr-2"></i>GitHub
                     </a>
                 </div>
@@ -68,9 +85,10 @@ rate(container_cpu_usage_seconds_total{namespace="production"}[5m])</pre>
                 <h2 class="text-3xl font-bold mb-8 text-center">Installation</h2>
                 <div class="bg-gray-800 p-6 rounded-lg max-w-2xl mx-auto">
                     <p class="mb-4">Add the Helm repository:</p>
-                    <pre class="bg-gray-900 p-4 rounded mb-4">helm repo add epimetheus https://epimetheus.github.io/charts</pre>
-                    <p class="mb-4">Install Epimetheus:</p>
-                    <pre class="bg-gray-900 p-4 rounded">helm install epimetheus epimetheus/epimetheus</pre>
+                    <pre class="bg-gray-900 p-4 rounded mb-4">helm repo add kepimetheus https://kepimetheus.github.io/charts</pre>
+                    <p class="mb-4">Install Kepimetheus:</p>
+                    <pre class="bg-gray-900 p-4 rounded">helm install kepimetheus kepimetheus/kepimetheus</pre>
+                    <p class="text-sm text-gray-500 mt-4 italic">Yes, that's a lot of K's. We know. We're not happy about it either. 😅</p>
                 </div>
             </section>
 
@@ -93,9 +111,10 @@ rate(container_cpu_usage_seconds_total{namespace="production"}[5m])</pre>
         <!-- Footer -->
         <footer class="bg-gray-800 py-8">
             <div class="container mx-auto px-4 text-center text-gray-400">
-                <p>Epimetheus - Made with ☕ by developers, for developers</p>
+                <p>Kepimetheus - Made with ☕ by developers, for developers</p>
+                <p class="text-sm text-gray-500 mt-2">(The K stands for "Kubernetes developers took all the good domains")</p>
                 <p class="mt-2">
-                    <a href="https://github.com/epimetheus/epimetheus" class="hover:text-white">GitHub</a> |
+                    <a href="https://github.com/kepimetheus/kepimetheus" class="hover:text-white">GitHub</a> |
                     <a href="#" class="hover:text-white">Documentation</a> |
                     <a href="#" class="hover:text-white">Community</a>
                 </p>
