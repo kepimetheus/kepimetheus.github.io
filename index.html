@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epimetheus - Natural Language PromQL</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Hero Section -->
+    <div class="min-h-screen flex flex-col">
+        <nav class="bg-gray-800 p-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <div class="text-xl font-bold">Epimetheus</div>
+                <div class="space-x-4">
+                    <a href="#features" class="hover:text-blue-400">Features</a>
+                    <a href="#install" class="hover:text-blue-400">Install</a>
+                    <a href="#docs" class="hover:text-blue-400">Docs</a>
+                    <a href="https://github.com/epimetheus/epimetheus" class="hover:text-blue-400">GitHub</a>
+                </div>
+            </div>
+        </nav>
+
+        <main class="flex-grow container mx-auto px-4 py-16">
+            <!-- Hero -->
+            <div class="text-center mb-16">
+                <h1 class="text-5xl font-bold mb-4">Epimetheus</h1>
+                <p class="text-2xl text-gray-400 mb-8">Because 2 AM You Shouldn't Need to Remember PromQL Syntax</p>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg max-w-2xl mx-auto mb-8">
+                    <pre class="text-left text-sm text-green-400">
+<span class="text-blue-400">User:</span> Show me CPU usage for all pods in production namespace
+<span class="text-purple-400">Epimetheus:</span> Generating PromQL...
+rate(container_cpu_usage_seconds_total{namespace="production"}[5m])</pre>
+                </div>
+                <div class="space-x-4">
+                    <a href="#install" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg inline-block">Get Started</a>
+                    <a href="https://github.com/epimetheus/epimetheus" class="bg-gray-700 hover:bg-gray-600 px-6 py-3 rounded-lg inline-block">
+                        <i class="fab fa-github mr-2"></i>GitHub
+                    </a>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <section id="features" class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 text-center">Features</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gray-800 p-6 rounded-lg">
+                        <i class="fas fa-brain text-4xl text-blue-400 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Natural Language</h3>
+                        <p class="text-gray-400">Write queries in plain English. No more syntax nightmares.</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg">
+                        <i class="fas fa-bolt text-4xl text-blue-400 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Instant Setup</h3>
+                        <p class="text-gray-400">Two Helm commands and you're ready to go.</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg">
+                        <i class="fas fa-robot text-4xl text-blue-400 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">AI Powered</h3>
+                        <p class="text-gray-400">Built on Amazon Bedrock for accurate query generation.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Installation -->
+            <section id="install" class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 text-center">Installation</h2>
+                <div class="bg-gray-800 p-6 rounded-lg max-w-2xl mx-auto">
+                    <p class="mb-4">Add the Helm repository:</p>
+                    <pre class="bg-gray-900 p-4 rounded mb-4">helm repo add epimetheus https://epimetheus.github.io/charts</pre>
+                    <p class="mb-4">Install Epimetheus:</p>
+                    <pre class="bg-gray-900 p-4 rounded">helm install epimetheus epimetheus/epimetheus</pre>
+                </div>
+            </section>
+
+            <!-- Documentation -->
+            <section id="docs" class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 text-center">Documentation</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <a href="#" class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700">
+                        <h3 class="text-xl font-bold mb-2">Quick Start Guide</h3>
+                        <p class="text-gray-400">Get up and running in minutes.</p>
+                    </a>
+                    <a href="#" class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700">
+                        <h3 class="text-xl font-bold mb-2">API Reference</h3>
+                        <p class="text-gray-400">Detailed API documentation.</p>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 py-8">
+            <div class="container mx-auto px-4 text-center text-gray-400">
+                <p>Epimetheus - Made with ☕ by developers, for developers</p>
+                <p class="mt-2">
+                    <a href="https://github.com/epimetheus/epimetheus" class="hover:text-white">GitHub</a> |
+                    <a href="#" class="hover:text-white">Documentation</a> |
+                    <a href="#" class="hover:text-white">Community</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
