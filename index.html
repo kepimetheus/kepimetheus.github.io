@@ -111,14 +111,15 @@ rate(container_cpu_usage_seconds_total{namespace="production"}[5m])</pre>
                                 </a>
                             </div>
                         </div>
-                        <div class="bg-gray-900 p-4 rounded-lg">
-                            <div class="text-sm text-gray-500 mb-2">// Example usage in Grafana:</div>
-                            <pre class="text-sm text-green-400 overflow-x-auto">
-<span class="text-blue-400">You:</span> Show CPU spikes in production namespace last hour
+<div class="bg-gray-900 p-4 rounded-lg">
+    <div class="text-sm text-gray-500 mb-2">// Example usage in Grafana:</div>
+    <pre class="text-sm text-green-400">
+<span class="text-blue-400">You:</span> Show CPU spikes in production namespace
 <span class="text-purple-400">Plugin:</span> Converting to PromQL...
 max(rate(container_cpu_usage_seconds_total{
   namespace="production"
 }[5m])) by (pod) > 0.8</pre>
+</div>
                         </div>
                     </div>
                 </div>
