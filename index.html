@@ -21,9 +21,10 @@
                 </div>
                 <div class="space-x-4">
                     <a href="#features" class="hover:text-blue-400">Features</a>
+                    <a href="#grafana" class="hover:text-blue-400">Grafana</a>
                     <a href="#install" class="hover:text-blue-400">Install</a>
                     <a href="#docs" class="hover:text-blue-400">Docs</a>
-                    <a href="https://github.com/kepimetheus/epimetheus.github.io/tree/main" class="hover:text-blue-400">GitHub</a>
+                    <a href="https://github.com/kepimetheus/kepimetheus" class="hover:text-blue-400">GitHub</a>
                 </div>
             </div>
         </nav>
@@ -53,7 +54,7 @@ rate(container_cpu_usage_seconds_total{namespace="production"}[5m])</pre>
                     <a href="#install" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg inline-block">
                         <i class="fas fa-rocket mr-2"></i>Get Started
                     </a>
-                    <a href="https://github.com/kepimetheus/epimetheus.github.io/tree/main" class="bg-gray-700 hover:bg-gray-600 px-6 py-3 rounded-lg inline-block">
+                    <a href="https://github.com/kepimetheus/kepimetheus" class="bg-gray-700 hover:bg-gray-600 px-6 py-3 rounded-lg inline-block">
                         <i class="fab fa-github mr-2"></i>GitHub
                     </a>
                 </div>
@@ -69,9 +70,9 @@ rate(container_cpu_usage_seconds_total{namespace="production"}[5m])</pre>
                         <p class="text-gray-400">Write queries in plain English. No more syntax nightmares.</p>
                     </div>
                     <div class="bg-gray-800 p-6 rounded-lg">
-                        <i class="fas fa-bolt text-4xl text-blue-400 mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Instant Setup</h3>
-                        <p class="text-gray-400">Two Helm commands and you're ready to go.</p>
+                        <i class="fas fa-chart-line text-4xl text-blue-400 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Grafana Plugin</h3>
+                        <p class="text-gray-400">Native integration with your favorite dashboards.</p>
                     </div>
                     <div class="bg-gray-800 p-6 rounded-lg">
                         <i class="fas fa-robot text-4xl text-blue-400 mb-4"></i>
@@ -81,15 +82,67 @@ rate(container_cpu_usage_seconds_total{namespace="production"}[5m])</pre>
                 </div>
             </section>
 
+            <!-- Grafana Plugin -->
+            <section id="grafana" class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 text-center">Grafana Integration</h2>
+                <div class="bg-gray-800 p-6 rounded-lg max-w-4xl mx-auto">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-blue-400">Natural Language PromQL Plugin</h3>
+                            <p class="text-gray-300">Transform your Grafana experience with natural language queries. No more PromQL syntax hunting!</p>
+                            <div class="space-y-2">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-2"></i>
+                                    <span>Native Grafana integration</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-2"></i>
+                                    <span>Real-time query translation</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-2"></i>
+                                    <span>One-click installation</span>
+                                </div>
+                            </div>
+                            <div class="pt-4">
+                                <a href="https://github.com/kepimetheus/kepimetheus-nlppromqlplugin-app" 
+                                   class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg inline-block">
+                                    <i class="fas fa-puzzle-piece mr-2"></i>Get the Plugin
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bg-gray-900 p-4 rounded-lg">
+                            <div class="text-sm text-gray-500 mb-2">// Example usage in Grafana:</div>
+                            <pre class="text-sm text-green-400 overflow-x-auto">
+<span class="text-blue-400">You:</span> Show CPU spikes in production namespace last hour
+<span class="text-purple-400">Plugin:</span> Converting to PromQL...
+max(rate(container_cpu_usage_seconds_total{
+  namespace="production"
+}[5m])) by (pod) > 0.8</pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Installation -->
             <section id="install" class="mb-16">
                 <h2 class="text-3xl font-bold mb-8 text-center">Installation</h2>
                 <div class="bg-gray-800 p-6 rounded-lg max-w-2xl mx-auto">
-                    <p class="mb-4">Add the Helm repository:</p>
-                    <pre class="bg-gray-900 p-4 rounded mb-4">helm repo add kepimetheus https://kepimetheus.github.io/charts</pre>
-                    <p class="mb-4">Install Kepimetheus:</p>
-                    <pre class="bg-gray-900 p-4 rounded">helm install kepimetheus kepimetheus/kepimetheus</pre>
-                    <p class="text-sm text-gray-500 mt-4 italic">Yes, that's a lot of K's. We know. We're not happy about it either. 😅</p>
+                    <div class="space-y-6">
+                        <div>
+                            <p class="mb-4">1. Add the Helm repository:</p>
+                            <pre class="bg-gray-900 p-4 rounded mb-4">helm repo add kepimetheus https://kepimetheus.github.io/charts</pre>
+                        </div>
+                        <div>
+                            <p class="mb-4">2. Install Kepimetheus:</p>
+                            <pre class="bg-gray-900 p-4 rounded mb-4">helm install kepimetheus kepimetheus/kepimetheus</pre>
+                        </div>
+                        <div>
+                            <p class="mb-4">3. Install Grafana Plugin:</p>
+                            <pre class="bg-gray-900 p-4 rounded">grafana-cli plugins install kepimetheus-nlppromql-app</pre>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-4 italic">Three commands to happiness. No PromQL expertise required! 🚀</p>
+                    </div>
                 </div>
             </section>
 
@@ -98,7 +151,7 @@ rate(container_cpu_usage_seconds_total{namespace="production"}[5m])</pre>
                 <h2 class="text-3xl font-bold mb-8 text-center">About the Creator</h2>
                 <div class="bg-gray-800 p-6 rounded-lg max-w-2xl mx-auto">
                     <p class="text-gray-300 leading-relaxed">
-                        Meet <span class="font-bold">Rodrigo Melgar</span>, an OpenSource Lover who believes Kubernetes is just Tetris for containers. 
+                        Meet <span class="font-bold">Rodrigo Melgar</span>, an AWS DevRel who believes Kubernetes is just Tetris for containers. 
                         When not collecting every gaming console since 1987 (yes, even the Virtual Boy), he's teaching his kids that "NES cartridge blowing" 
                         was the original debugging technique. Turns out managing pods is a lot like being a dad - sometimes you just need to restart them 
                         and hope for the best. Creator of Kepimetheus because speaking plain English to computers should be easier than explaining why 
